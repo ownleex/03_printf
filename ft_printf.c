@@ -6,7 +6,7 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:22:52 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/04 19:02:00 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:37:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_format(va_list args, const char c)
 	ret = 0;
 	if (c == 'c')
 		ret += ft_printchar(va_arg(args, int));
-	else if (c == 's')
+/*	else if (c == 's')
 		ret += ft_printstr(va_arg(args, char *));
 	else if (c == 'p')
 		ret += ft_printptr(va_arg(args, void *));
@@ -36,7 +36,7 @@ int	ft_format(va_list args, const char c)
 	else if (c == 'x' || c == 'X')
 		ret += ft_printhex(va_arg(args, unsigned int), c);
 	else if (c == '%')
-		ret += ft_printchar('%');
+		ret += ft_printchar('%');*/
 	return (ret);
 }
 
@@ -51,7 +51,7 @@ int	ft_printf(const char *input, ...)
 	{
 		if (*input == '%')
 		{
-			ret += ft_format(args, input[i + 1]);
+			ret += ft_format(args, *(input + 1));
 			input++;
 		}
 		else
@@ -60,4 +60,10 @@ int	ft_printf(const char *input, ...)
 	}
 	va_end(args);
 	return (ret);
+}
+
+int	main(void)
+{
+	ft_printf("Hello %c\n", 'a');
+	return (0);
 }

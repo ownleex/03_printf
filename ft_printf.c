@@ -6,7 +6,7 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:22:52 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/04 22:37:39 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/04 23:41:21 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printchar(char c)
 {
-	write(1, &c, 1);
+	ft_putchar_fd(c, 1);
 	return (1);
 }
 
@@ -25,9 +25,9 @@ int	ft_format(va_list args, const char c)
 	ret = 0;
 	if (c == 'c')
 		ret += ft_printchar(va_arg(args, int));
-/*	else if (c == 's')
+	else if (c == 's')
 		ret += ft_printstr(va_arg(args, char *));
-	else if (c == 'p')
+/*	else if (c == 'p')
 		ret += ft_printptr(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
 		ret += ft_printint(va_arg(args, int));
@@ -64,6 +64,9 @@ int	ft_printf(const char *input, ...)
 
 int	main(void)
 {
-	ft_printf("Hello %c\n", 'a');
+	ft_printf("Mon printf : Hello les %c%c%c%c !\n", 'g', 'e', 'n', 's');
+	printf("Vrai printf : Hello les %c%c%c%c !\n", 'g', 'e', 'n', 's');
+	ft_printf("Mon printf : Hello %s gens ! %s ?\n", "les", "Comment ca va");
+	printf("Vrai printf : Hello %s gens ! %s ?\n", "les", "Comment ca va");
 	return (0);
 }

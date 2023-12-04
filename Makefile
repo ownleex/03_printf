@@ -6,7 +6,7 @@
 #    By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 14:58:05 by ayarmaya          #+#    #+#              #
-#    Updated: 2023/12/04 19:20:24 by ayarmaya         ###   ########.fr        #
+#    Updated: 2023/12/05 00:33:04 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,4 +56,3 @@ fclean:		clean
 re:		fclean all
 
 .PHONY:	all clean fclean re
-

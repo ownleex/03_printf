@@ -6,11 +6,11 @@
 #    By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 14:58:05 by ayarmaya          #+#    #+#              #
-#    Updated: 2023/12/05 00:33:04 by ayarmaya         ###   ########.fr        #
+#    Updated: 2023/12/05 18:05:01 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ft_printf.a
+NAME		=	libftprintf.a
 
 LIBFTNAME	=	libft.a
 

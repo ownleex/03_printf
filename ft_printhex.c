@@ -6,8 +6,40 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:16:54 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/04 19:16:59 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:06:52 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_puthexa(unsigned int nbr, char c)
+{
+	if (nbr >= 16)
+	{
+		ft_puthexa(nbr / 16, c);
+		ft_puthexa(nbr % 16, c);
+	}
+	else if (nbr < 10)
+		ft_putchar_fd(nbr + '0', 1);
+	else
+	{
+		if (c == 'x')
+			ft_putchar_fd(nbr - 10 + 'a', 1);
+		if (c == 'X')
+			ft_putchar_fd(nbr - 10 + 'A', 1);
+	}
+}
+
+int	ft_printhex(unsigned int nbr, char c)
+{
+	int	len;
+
+	len = 0;
+	ft_puthexa(nbr, c);
+	while (nbr >= 16)
+	{
+		nbr = nbr / 16;
+		len++;
+	}
+	return (len + 1);
+}

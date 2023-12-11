@@ -6,7 +6,7 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:16:54 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/05 18:06:52 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:49:46 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ int	ft_printhex(unsigned int nbr, char c)
 {
 	int	len;
 
-	len = 0;
+	len = 1;
 	ft_puthexa(nbr, c);
 	while (nbr >= 16)
 	{
 		nbr = nbr / 16;
 		len++;
 	}
-	return (len + 1);
+	return (len);
 }

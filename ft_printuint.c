@@ -6,7 +6,7 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:16:24 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/05 18:07:36 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:48:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	ft_printuint(unsigned int nbr)
 {
 	int	len;
 
-	len = 0;
+	len = 1;
 	ft_putuint(nbr);
 	while (nbr >= 10)
 	{
 		nbr = nbr / 10;
 		len++;
 	}
-	return (len + 1);
+	return (len);
 }

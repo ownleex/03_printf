@@ -6,7 +6,7 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:54:32 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/05 18:21:38 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/19 17:48:30 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printstr(char *str)
 	}
 	while (str[i])
 	{
-		ft_putchar_fd(str[i], 1);
+		ft_printchar(str[i]);
 		i++;
 	}
 	return (i);

@@ -6,7 +6,7 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:02:09 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/05 21:21:03 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:05:12 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_printstr(char *str);
 int		ft_printptr(void *value);
 int		ft_printint(int n);
 int		ft_printuint(unsigned int n);
-int		ft_printhex(unsigned int n, char c);
+int		ft_printhex(unsigned long long n, char c);
+int		ft_printchar(char c);
 
 #endif

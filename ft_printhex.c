@@ -6,13 +6,13 @@
 /*   By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:16:54 by ayarmaya          #+#    #+#             */
-/*   Updated: 2023/12/11 16:49:46 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:20:04 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthexa(unsigned int nbr, char c)
+void	ft_puthexa(unsigned long long nbr, char c)
 {
 	if (nbr >= 16)
 	{
@@ -30,16 +30,16 @@ void	ft_puthexa(unsigned int nbr, char c)
 	}
 }
 
-int	ft_printhex(unsigned int nbr, char c)
+int	ft_printhex(unsigned long long nbr, char c)
 {
-	int	len;
+	int	ret;
 
-	len = 1;
+	ret = 1;
 	ft_puthexa(nbr, c);
 	while (nbr >= 16)
 	{
 		nbr = nbr / 16;
-		len++;
+		ret++;
 	}
-	return (len);
+	return (ret);
 }

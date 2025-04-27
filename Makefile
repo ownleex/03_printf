@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MakeFile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ayarmaya <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 14:58:05 by ayarmaya          #+#    #+#              #
-#    Updated: 2023/12/05 18:05:01 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/27 18:55:58 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,24 +35,29 @@ RM		=	rm -f
 
 AR		=	ar crs
 
-all:		${NAME}
+%.o: %.c
+	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+
+all: ${NAME}
 
 make_libft:
-			@make -C ${LIBFT_DIR}
-			@cp ${LIBFT_DIR}/${LIBFTNAME} .
-			@mv ${LIBFTNAME} ${NAME}
+	@make -C ${LIBFT_DIR}
+	@cp ${LIBFT_DIR}/${LIBFTNAME} .
+	@mv ${LIBFTNAME} ${NAME}
 
-${NAME}: 	make_libft ${OBJS}
-			${AR} ${NAME} ${OBJS}
+$(NAME): make_libft $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 clean:
-			${RM} ${OBJS}
-			@cd ${LIBFT_DIR} && make clean
+	$(RM) $(OBJS) $(OBJS:.o=.d)  # Supprime .o ET .d
+	@cd $(LIBFT_DIR) && make clean
 
-fclean:		clean
-			${RM} ${NAME}
-			@cd ${LIBFT_DIR} && make fclean
+fclean: clean
+	$(RM) $(NAME)
+	@cd $(LIBFT_DIR) && make fclean
 
-re:		fclean all
+re: fclean all
 
-.PHONY:	all clean fclean re
+-include $(OBJS:.o=.d)  # Inclusion des dépendances
+
+.PHONY: all clean fclean re

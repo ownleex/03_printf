@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 14:58:05 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/27 18:55:58 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/27 18:58:43 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,6 @@ fclean: clean
 
 re: fclean all
 
--include $(OBJS:.o=.d)  # Inclusion des dépendances
+-include $(OBJS:.o=.d)
 
 .PHONY: all clean fclean re

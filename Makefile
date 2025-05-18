@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 14:58:05 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/27 18:58:43 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/05/18 12:43:11 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ $(NAME): make_libft $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS:.o=.d)  # Supprime .o ET .d
+	$(RM) $(OBJS) $(OBJS:.o=.d)
 	@cd $(LIBFT_DIR) && make clean
 
 fclean: clean
